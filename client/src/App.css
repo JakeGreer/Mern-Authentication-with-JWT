@@ -1,4 +1,12 @@
-/* .App {
+.App {
 	width: 100wh;
 	height: 100vh;
-} */
+}
+
+a {
+	color: #23A6D5;
+}
+
+a:hover {
+	text-decoration: none;
+}

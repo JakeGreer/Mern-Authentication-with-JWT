@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Row, Col, Input, InputGroup } from 'reactstrap';
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -53,75 +54,94 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
 
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col s8 offset-s2 login-container">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b className="light-blue-text accent-2">Login</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
-                Don't have an account? <Link to="/register">Register</Link>
-              </p>
+    return (  
+        <div className="d-flex justify-content-center h-100  login-container">
+            <div className="card off-font">
+                <div className="card-header text-left">
+                <h3>Sign In</h3>
+                <div className="d-flex justify-content-end social_icon">
+                    <span><i className="fab fa-facebook-square"></i></span>
+                    <span><i className="fab fa-google-plus-square"></i></span>
+                    <span><i className="fab fa-twitter-square"></i></span>
+                </div>
+                {this.state.successMessage && <div className="alert alert-success">{this.state.successMessage}</div>}
+                </div>
+                <div className="card-body">
+                <form noValidate onSubmit={this.onSubmit}>
+                    <InputGroup className="form-group">
+                        <div className="input-group-prepend">
+                            <span className="input-group-text"><i className="fas fa-user"></i></span>
+                        </div>
+                        <Input
+                            onChange={this.onChange}
+                            value={this.state.email}
+                            error={errors.email}
+                            id="email"
+                            type="email"
+                            placeholder="email"
+                            className={classnames("", {
+                                invalid: errors.email || errors.emailnotfound
+                            })}
+                        />
+                        <span className="text-red">
+                            {errors.email}
+                            {errors.emailnotfound}
+                        </span>
+                    </InputGroup>
+                    <Row>
+                        <Col size="md-12">
+                        </Col>
+                    </Row>
+                    <InputGroup className="form-group">
+                        <div className="input-group-prepend">
+                            <span className="input-group-text"><i className="fas fa-key"></i></span>
+                        </div>
+                        <Input
+                            onChange={this.onChange}
+                            value={this.state.password}
+                            error={errors.password}
+                            id="password"
+                            type="password"
+                            placeholder="password"
+                            className={classnames("", {
+                                invalid: errors.password || errors.passwordincorrect
+                            })}
+                        />
+                        <span className="red-text">
+                            {errors.password}
+                            {errors.passwordincorrect}
+                        </span>
+                    </InputGroup>
+                    <div className="form-group">
+                        <button
+                            style={{
+                                width: "150px",
+                                borderRadius: "3px",
+                                letterSpacing: "1.5px",
+                                marginTop: "1rem"
+                            }}
+                            type="submit"
+                            className="btn float-right login_btn"
+                            >
+                            Login
+                        </button>
+                    </div>
+                </form>
+                </div>
+                <div className="card-footer">
+                    <div className="d-flex justify-content-center links">
+                        Don't have an account?<Link to="/register">Sign Up</Link>
+                    </div>
+                    <div className="d-flex justify-content-center">
+                        <Link to="#">Forgot your password?</Link>
+                    </div>
+                </div>
             </div>
-            <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
-                  className={classnames("", {
-                    invalid: errors.email || errors.emailnotfound
-                  })}
-                />
-                <label htmlFor="email">Email</label>
-                <span className="red-text">
-                  {errors.email}
-                  {errors.emailnotfound}
-                </span>
-              </div>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                  className={classnames("", {
-                    invalid: errors.password || errors.passwordincorrect
-                  })}
-                />
-                <label htmlFor="password">Password</label>
-                <span className="red-text">
-                  {errors.password}
-                  {errors.passwordincorrect}
-                </span>
-              </div>
-              <div className="col s12 right-align" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn waves-effect waves-light hoverable light-blue accent-2"
-                >
-                  Login
-                </button>
-              </div>
-            </form>
-          </div>
+            {/* <Link to="/" className="btn-flat waves-effect">
+                <i className="material-icons left">keyboard_backspace</i> Back to
+                home
+            </Link> */}
         </div>
-      </div>
     );
   }
 }

@@ -1,4 +1,83 @@
-.login-container {
-    background: #fff;
-    padding: 30px!important;
+
+.login-container .off-font{
+    font-family: 'Nunito', sans-serif;
 }
+
+.login-container.container {
+    align-content: center;
+}
+
+.login-container .card{
+    /*height: 370px;*/
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.login-container .social_icon span{
+    font-size: 60px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.login-container .social_icon span:hover{
+    color: #ffffb2;
+    cursor: pointer;
+}
+
+.login-container .card-header h3{
+    color: white;
+}
+
+.login-container .social_icon{
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.login-container .input-group-prepend span{
+    width: 50px;
+    background-color: #23A6D5;
+    color: black;
+    border:0 !important;
+}
+
+.login-container input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.login-container .remember{
+    color: white;
+}
+
+.login-container .remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login-container .login_btn{
+    color: #fff;
+    background-color: #23A6D5;
+    border: 1px solid transparent;
+    font-weight: 600;
+    width: 100px;
+}
+
+.login-container .login_btn:hover{
+    color: #23A6D5;
+    background-color: #fff;
+    border: 1px solid #23A6D5;
+}
+
+.login-container .links{
+    color: white;
+}
+
+.login-container .links a{
+    margin-left: 4px;
+}
+
