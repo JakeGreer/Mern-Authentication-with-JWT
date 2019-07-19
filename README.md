@@ -29,6 +29,8 @@ module.exports = {
 };
 ```
 
+If you are hosting the db locally on your machine make sure you have mongodb installed and have `mongod` running in the background.
+
 ## Quick Start
 
 ```javascript
