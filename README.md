@@ -16,13 +16,16 @@ This project uses the following technologies:
 - [Build a Login/Auth App with the MERN Stack — Part 3 (Linking Redux with React Components)](https://blog.bitsrc.io/build-a-login-auth-app-with-the-mern-stack-part-3-react-components-88190f8db718)
 
 ## Configuration
-
-Make sure to add your own `MONGOURI` from your [mLab](http://mlab.com) database in `config/keys.js`.
+Make sure to add a `keys.js` file within the config folder. This must include your own `MONGOURI` from your [mLab](http://mlab.com) database in `config/keys.js` .
 
 ```javascript
 module.exports = {
-  mongoURI: "YOUR_MONGO_URI_HERE",
-  secretOrKey: "secret"
+    mongoURI: "YOUR_MONGO_URI_HERE",
+    secretOrKey: "your secret key",
+    PORT: 3001,
+    NODE_ENV: 'development',
+    DEBUG: true,
+    MAX_CONTENT_LENGTH_ACCEPTED: 9999,
 };
 ```
 
@@ -33,7 +36,7 @@ module.exports = {
 npm install && npm run client-install
 
 // Run client & server with concurrently
-npm run dev
+npm start
 
 // Server runs on http://localhost:5000 and client on http://localhost:3000
 ```
