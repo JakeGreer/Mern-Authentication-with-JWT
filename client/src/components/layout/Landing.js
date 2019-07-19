@@ -8,7 +8,7 @@ class Landing extends Component {
         <div className="row">
           <div className="col s12 center-align">
             <h4>
-              <b>Build</b> a login/auth app with the{" "}
+              <b className="light-blue-text accent2">Build</b> a login/auth app with the{" "}
               <span style={{ fontFamily: "monospace" }}>MERN</span> stack from
               scratch
             </h4>
@@ -25,7 +25,7 @@ class Landing extends Component {
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                className="btn waves-effect waves-light hoverable light-blue accent-2"
               >
                 Register
               </Link>
@@ -38,7 +38,7 @@ class Landing extends Component {
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }}
-                className="btn btn-large btn-flat waves-effect white black-text"
+                className="btn waves-effect waves-light hoverable red lighten-1"
               >
                 Log In
               </Link>

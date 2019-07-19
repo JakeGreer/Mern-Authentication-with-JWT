@@ -12,6 +12,7 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
+import AnimatedBackground from "./components/AnimatedBackground";
 import Dashboard from "./components/dashboard/Dashboard";
 
 import "./App.css";
@@ -41,10 +42,10 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar />
+            {/* <Navbar /> */}
             <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={AnimatedBackground(Register)} />
+            <Route exact path="/login" component={AnimatedBackground(Login)} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
