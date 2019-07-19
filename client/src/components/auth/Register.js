@@ -72,7 +72,7 @@ class Register extends Component {
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s6">
+              <div className="input-field col m6 s12">
                 <input
                     onChange={this.onChange}
                     value={this.state.firstName}
@@ -87,7 +87,7 @@ class Register extends Component {
                 <span className="red-text">{errors.lastName}</span>
               </div>
 
-              <div className="input-field col s6">
+              <div className="input-field col m6 s12">
                 <input
                     onChange={this.onChange}
                     value={this.state.lastName}

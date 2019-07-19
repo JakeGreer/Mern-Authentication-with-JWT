@@ -44,7 +44,7 @@ app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }))
 app.use(contentLength.validateMax({max: process.env.MAX_CONTENT_LENGTH_ACCEPTED, status: 400, message: "stop it!"})); // max size accepted for the content-length
 
 //Helps protect against HPP attacks
-// app.use(hpp()); //after body parser
+app.use(hpp()); //after body parser
 
 // DB Config
 const db = KEYS.mongoURI;
@@ -72,12 +72,12 @@ app.use("/api/users", users);
 //see https://expressjs.com/en/guide/behind-proxies.html
 // app.set('trust proxy', 1);
 
-// const apiLimiter = rateLimit({
-//     windowMs: 15 * 60 * 1000, // 15 minutes
-//     max: 100 // limit each IP to 100 requests per windowMs
-//   });
-//  apply to all requests
-// app.use(apiLimiter);
+const apiLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100 // limit each IP to 100 requests per windowMs
+  });
+ //apply to all requests
+app.use(apiLimiter);
 
 // Send every request to the React app
 // Define any API routes before this runs

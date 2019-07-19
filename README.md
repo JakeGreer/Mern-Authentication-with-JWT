@@ -15,7 +15,7 @@ Make sure to add a `keys.js` file within the `config` folder. This must include 
 ```javascript
 module.exports = {
     mongoURI: "YOUR_MONGO_URI_HERE",
-    secretOrKey: "your secret key",
+    APP_SECRET: "your secret key",
     PORT: 3001,
     NODE_ENV: 'development',
     DEBUG: true,
@@ -23,7 +23,9 @@ module.exports = {
 };
 ```
 
-If you are hosting the database locally on your machine make sure you have mongodb installed and have `mongod` running in the background. Your `MONGOURI` will look like `mongodb://localhost/your-db-name`
+If you are hosting the database locally on your machine make sure you have mongodb installed and have `mongod` running in the background. Your `MONGOURI` will look like `mongodb://localhost/your-db-name`;
+
+If you get a nodemon error make sure you have it installed. `sudo npm install -g nodemon`
 
 ## Quick Start
 
@@ -34,7 +36,7 @@ npm install && npm run client-install
 // Run client & server with concurrently
 npm start
 
-// Server runs on http://localhost:5000 and client on http://localhost:3000
+// Server runs on http://localhost:3001 and client on http://localhost:3000
 ```
 
 For deploying to Heroku, please refer to [this](https://www.youtube.com/watch?v=71wSzpLyW9k) helpful video by TraversyMedia.
