@@ -68,7 +68,7 @@ class Login extends Component {
                 </div>
                 <div className="card-body">
                 <form noValidate onSubmit={this.onSubmit}>
-                    <InputGroup className="form-group">
+                    <InputGroup className="form-group" style={{marginBottom: "0px"}}>
                         <div className="input-group-prepend">
                             <span className="input-group-text"><i className="fas fa-user"></i></span>
                         </div>
@@ -83,16 +83,18 @@ class Login extends Component {
                                 invalid: errors.email || errors.emailnotfound
                             })}
                         />
-                        <span className="text-red">
-                            {errors.email}
-                            {errors.emailnotfound}
-                        </span>
                     </InputGroup>
-                    <Row>
+                    <Row style={{marginBottom: "1rem"}}>
                         <Col size="md-12">
+                          <span className="text-danger">
+                            <small>
+                              {errors.email}
+                              {errors.emailnotfound}
+                            </small>
+                          </span>
                         </Col>
                     </Row>
-                    <InputGroup className="form-group">
+                    <InputGroup className="form-group" style={{marginBottom: "0px"}}>
                         <div className="input-group-prepend">
                             <span className="input-group-text"><i className="fas fa-key"></i></span>
                         </div>
@@ -107,11 +109,17 @@ class Login extends Component {
                                 invalid: errors.password || errors.passwordincorrect
                             })}
                         />
-                        <span className="red-text">
-                            {errors.password}
-                            {errors.passwordincorrect}
-                        </span>
                     </InputGroup>
+                    <Row style={{marginBottom: "1rem"}}>
+                        <Col size="md-12">
+                          <span className="text-danger" style={{display: 'block'}}>
+                            <small>
+                              {errors.password}
+                              {errors.passwordincorrect}
+                            </small>
+                          </span>
+                        </Col>
+                    </Row>
                     <div className="form-group">
                         <button
                             style={{

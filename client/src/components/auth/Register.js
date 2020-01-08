@@ -60,8 +60,8 @@ class Register extends Component {
         <Container className="register login-wrapper" fluid >
             <Row className="register-wrap">
                 <Col md="4" className="register-left off-font">
-                    <h3>Welcome</h3>
-                    <p>You are 30 seconds away from winning some money!</p>
+                    <h3>Welcome!</h3>
+                    <p>Already have an acount?</p>
                     <Link className="btn login-btn" to="/login">Login</Link><br/>
                 </Col>
                 <Col md="8" className="register-right">
@@ -85,7 +85,7 @@ class Register extends Component {
                                                         invalid: errors.firstName
                                                     })}
                                                 />
-                                                <span className="red-text">{errors.firstName}</span>
+                                                <span className="text-danger"><small>{errors.firstName}</small></span>
                                             </Col>
                                             <Col md="6" className="form-group">
                                                 <label htmlFor="lastName">Last Name</label>
@@ -99,7 +99,7 @@ class Register extends Component {
                                                         invalid: errors.lastName
                                                     })}
                                                 />
-                                                <span className="red-text">{errors.lastName}</span>
+                                                <span className="text-danger"><small>{errors.lastName}</small></span>
                                             </Col>
                                         </div>
                                         <div className="form-row">
@@ -115,7 +115,7 @@ class Register extends Component {
                                                         invalid: errors.email
                                                     })}
                                                 />
-                                                <span className="red-text">{errors.email}</span>
+                                                <span className="text-danger"><small>{errors.email}</small></span>
                                             </Col>
                                         </div>
                                         <div className="form-row">
@@ -131,7 +131,7 @@ class Register extends Component {
                                                         invalid: errors.password
                                                     })}
                                                 />
-                                                <span className="red-text">{errors.password}</span>
+                                                <span className="text-danger"><small>{errors.password}</small></span>
                                             </Col>
                                             <Col md="6" className="form-group">
                                                 <label htmlFor="password2">Confirm Password</label>
@@ -145,7 +145,7 @@ class Register extends Component {
                                                         invalid: errors.password2
                                                     })}
                                                 />
-                                                <span className="red-text">{errors.password2}</span>
+                                                <span className="text-danger"><small>{errors.password2}</small></span>
                                             </Col>
                                             <Col md="12" className="form-group">
                                                 <Button
